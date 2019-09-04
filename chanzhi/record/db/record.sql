@@ -11,8 +11,11 @@ CREATE TABLE `xs_record` (
     `tolls` decimal(8,2) NOT NULL default 0.00,
     `parking` decimal(8,2) NOT NULL default 0.00,
     `meal` decimal(8,2) NOT NULL default 0.00,
+    `hotel` decimal(8,2) NOT NULL default 0.00,
     `remark` text NOT NULL,
     `status` varchar(20) NOT NULL,
+    `addedDate` datetime NOT NULL,
+    `addedBy` datetime NOT NULL,
     `lang` char(30) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -21,8 +24,10 @@ DROP TABLE IF EXISTS `xs_customer`;
 CREATE TABLE `xs_customer` (
     `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
     `name` char(50) NOT NULL,
+    `abbreviation` char(50) NOT NULL,
     `address` text NOT NULL,
-    `beginDate` datetime NOT NULL,
+    `addedDate` datetime NOT NULL,
+    `addedBy` datetime NOT NULL,
     `lang` char(30) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -36,12 +41,14 @@ CREATE TABLE `xs_car` (
     `character` char(20) NOT NULL,
     `owner` char(50) NOT NULL,
     `VIN` char(50) NOT NULL,
-    `Engine` char(50) NOT NULL,
+    `engine` char(50) NOT NULL,
     `model` char(50) NOT NULL,
     `address` text NOT NULL,
-    `registerDate` datetime NOT NULL,
-    `issueDate` datetime NOT NULL,
-    `expiryDate` datetime NOT NULL,
+    `registerDate` date NOT NULL,
+    `issueDate` date  NOT NULL,
+    `expiryDate` date NOT NULL,
+    `addedDate` datetime NOT NULL,
+    `addedBy` datetime NOT NULL,
     `lang` char(30) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -49,15 +56,18 @@ CREATE TABLE `xs_car` (
 DROP TABLE IF EXISTS `xs_driver`;
 CREATE TABLE `xs_driver` (
     `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+    `userID` mediumint(8) NOT NULL,
     `number` char(50) NOT NULL,
     `archives` char(50) NOT NULL,
     `name` char(30) NOT NULL,
     `sex` char(10) NOT NULL,
     `class` char(10) NOT NULL,
     `address` text NOT NULL,
-    `birthDate` datatime NOT NULL,
-    `firstDate` datatime NOT NULL,
-    `expiryDate` datetime NOT NULL,
+    `birthDate` date NOT NULL,
+    `firstDate` date NOT NULL,
+    `expiryDate` date NOT NULL,
+    `addedDate` datetime NOT NULL,
+    `addedBy` datetime NOT NULL,
     `lang` char(30) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
