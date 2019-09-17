@@ -30,6 +30,8 @@ $lang->car->limit        = '核定载人数';
 $lang->car->addedBy      = '添加人';
 $lang->car->addedDate    = '添加日期';
 $lang->car->expiryDate   = '检验有效期';
+$lang->car->luCard       = '鲁通卡';
+$lang->car->qinCard      = '琴岛通';
 
 $lang->car->duplicatePlate= '车辆已存在，请确认后再添加!';
 

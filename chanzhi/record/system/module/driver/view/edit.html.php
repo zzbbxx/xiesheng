@@ -13,6 +13,10 @@
           <td><?php echo html::input('name', $driver->name, "class='form-control w-200px'");?></td>
         </tr>
         <tr>
+          <th><?php echo $lang->driver->mobile;?></th>
+          <td><?php echo html::input('mobile', $driver->mobile, "class='form-control w-200px'");?></td>
+        </tr>
+        <tr>
           <th class=''><?php echo $lang->driver->sex;?></th>
           <td class=''><?php echo html::select("sex", $lang->driver->sexList, $driver->sex, "class='form-control w-200px'");?></td>
         </tr>
@@ -58,7 +62,25 @@
               <span class='add-on'><button class="btn btn-default" type="button"><i class="icon-calendar"></i></button></span>
             </div>
           </td>
-        </tr>        
+        </tr>
+        <tr>
+          <th><?php echo $lang->driver->entryDate;?></th>
+          <td>
+            <div class="input-append date">
+              <?php echo html::input('entryDate', $driver->entryDate, "class='form-control form-date'");?>
+              <span class='add-on'><button class="btn btn-default" type="button"><i class="icon-calendar"></i></button></span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th><?php echo $lang->driver->leaveDate;?></th>
+          <td>
+            <div class="input-append date">
+              <?php echo html::input('leaveDate', $driver->leaveDate, "class='form-control form-date'");?>
+              <span class='add-on'><button class="btn btn-default" type="button"><i class="icon-calendar"></i></button></span>
+            </div>
+          </td>
+        </tr>
         <tr>
           <th></th>
           <td colspan='2'><?php echo html::submitButton();?></td>

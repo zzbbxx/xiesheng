@@ -18,6 +18,7 @@ if(RUN_MODE != 'front')
     }
 
 }
+$config->rights->guest['record']['admin']    = 'admin';
 
 $config->rights->member['record']['edit']     = 'edit';
 $config->rights->member['record']['view']     = 'view';

@@ -15,7 +15,7 @@ CREATE TABLE `xs_record` (
     `remark` text NOT NULL,
     `status` varchar(20) NOT NULL,
     `addedDate` datetime NOT NULL,
-    `addedBy` datetime NOT NULL,
+    `addedBy` char(30) NOT NULL default '',
     `lang` char(30) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -27,7 +27,7 @@ CREATE TABLE `xs_customer` (
     `abbreviation` char(50) NOT NULL,
     `address` text NOT NULL,
     `addedDate` datetime NOT NULL,
-    `addedBy` datetime NOT NULL,
+    `addedBy` char(30) NOT NULL default '',
     `lang` char(30) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -43,12 +43,14 @@ CREATE TABLE `xs_car` (
     `VIN` char(50) NOT NULL,
     `engine` char(50) NOT NULL,
     `model` char(50) NOT NULL,
+    `luCard` char(50) NOT NULL,
+    `qinCard` char(50) NOT NULL,
     `address` text NOT NULL,
     `registerDate` date NOT NULL,
     `issueDate` date  NOT NULL,
     `expiryDate` date NOT NULL,
     `addedDate` datetime NOT NULL,
-    `addedBy` datetime NOT NULL,
+    `addedBy` char(30) NOT NULL default '',
     `lang` char(30) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -62,12 +64,15 @@ CREATE TABLE `xs_driver` (
     `name` char(30) NOT NULL,
     `sex` char(10) NOT NULL,
     `class` char(10) NOT NULL,
+    `mobile` char(11) NOT NULL default '',
     `address` text NOT NULL,
+    `entryDate` date NOT NULL,
+    `leaveDate` date NOT NULL,
     `birthDate` date NOT NULL,
     `firstDate` date NOT NULL,
     `expiryDate` date NOT NULL,
     `addedDate` datetime NOT NULL,
-    `addedBy` datetime NOT NULL,
+    `addedBy` char(30) NOT NULL default '',
     `lang` char(30) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

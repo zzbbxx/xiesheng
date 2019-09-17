@@ -37,6 +37,14 @@
           <td><?php echo html::input('engine', '', "class='form-control w-200px'");?></td>
         </tr>
         <tr>
+          <th><?php echo $lang->car->luCard;?></th>
+          <td><?php echo html::input('luCard', '', "class='form-control w-200px'");?></td>
+        </tr>
+        <tr>
+          <th><?php echo $lang->car->qinCard;?></th>
+          <td><?php echo html::input('qinCard', '', "class='form-control w-200px'");?></td>
+        </tr>
+        <tr>
           <th><?php echo $lang->car->registerDate;?></th>
           <td>
             <div class="input-append date">
