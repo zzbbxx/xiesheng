@@ -4,7 +4,7 @@ class record extends control
     public function admin()
     {
         if($this->app->user->account == 'guest') $this->locate(helper::createLink('user', 'login', "referer=" . helper::safe64Encode($this->createLink('record', 'admin'))));
-        if(RUN_MODE == 'front' && $this->app->user->admin != 'yes' && $this->app->user->driverID == 0) $this->locate(helper::createLink('errors')); 
+        if(RUN_MODE == 'front' && $this->app->user->admin == 'no' && $this->app->user->driverID == 0) $this->locate(helper::createLink('errors')); 
 
         $this->view->title        = $this->lang->record->browse;
         $this->view->mobileTitle  = $this->lang->record->browse;
@@ -47,7 +47,7 @@ class record extends control
      * */
     public function browse($status = 'all', $customerID = '0', $carID = '0', $driverID = '0', $beginDate = '', $finishDate = '', $orderBy = 'id_desc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
     {
-        if(RUN_MODE == 'front' && $this->app->user->admin != 'yes' && $this->app->user->driverID == 0) $this->locate(helper::createLink('errors')); 
+        if(RUN_MODE == 'front' && $this->app->user->admin == 'no' && $this->app->user->driverID == 0) $this->locate(helper::createLink('errors')); 
 
         $this->app->loadClass('pager', $static = true);
         $pager = new pager($recTotal, $recPerPage, $pageID);
@@ -67,14 +67,14 @@ class record extends control
         $this->view->records      = $this->record->getRecords($status, $customerID, $carID, $driverID, $beginDate, $finishDate, $orderBy, $pageID);
         $this->view->carList      = $this->loadModel('car')->getCarsByType('plate');
         $this->view->driverList   = $this->loadModel('driver')->getDriversByType('name');
-        $this->view->customerList = $this->loadModel('customer')->getCustomersByType('name');
+        $this->view->customerList = $this->loadModel('customer')->getCustomersByType('abbreviation');
 
         $this->display();
     }
 
     public function create()
     {
-        if(RUN_MODE == 'front' && $this->app->user->admin != 'yes' && $this->app->user->driverID == 0) $this->locate(helper::createLink('errors')); 
+        if(RUN_MODE == 'front' && $this->app->user->admin == 'no' && $this->app->user->driverID == 0) $this->locate(helper::createLink('errors')); 
         if($_POST)
         {
             $result = $this->record->create();

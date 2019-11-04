@@ -1,0 +1,269 @@
+.m-inside .insideIcon{flex: 1 !important;}
+.insideIconLink img{padding:10px;}
+.insideIconLink .title{text-align:center;}
+
+.row,
+.column
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -ms-flex: auto;
+        flex: auto;
+}
+.row.single,
+.column.single
+{
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+}
+.row,
+.flex-row
+{
+        flex-direction: row;
+
+    -ms-flex-direction: row;
+}
+.row-reverse
+{
+        flex-direction: row-reverse;
+
+    -ms-flex-direction: row-reverse;
+}
+.column,
+.flex-column
+{
+        flex-direction: column;
+
+    -ms-flex-direction: column;
+}
+.column-reverse
+{
+        flex-direction: column-reverse;
+
+    -ms-flex-direction: column-reverse;
+}
+.cell,
+[class^='cell-'],
+[class*=' cell-']
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+.tile,
+.cell:not(.fixed)
+{
+    max-width: 100%;
+
+    -ms-flex: auto;
+        flex: auto;
+}
+.cell.fixed,
+[class^='cell-'],
+[class*=' cell-']
+{
+    -ms-flex: none;
+        flex: none;
+}
+.row > .cell-1
+{
+    width: 8.33333333%;
+}
+.row > .cell-2
+{
+    width: 16.66666667%;
+}
+.row > .cell-3
+{
+    width: 25%;
+}
+.row > .cell-4
+{
+    width: 33.33333333%;
+}
+.row > .cell-5
+{
+    width: 41.66666667%;
+}
+.row > .cell-6
+{
+    width: 50%;
+}
+.row > .cell-7
+{
+    width: 58.33333333%;
+}
+.row > .cell-8
+{
+    width: 66.66666667%;
+}
+.row > .cell-9
+{
+    width: 75%;
+}
+.row > .cell-10
+{
+    width: 83.33333333%;
+}
+.row > .cell-11
+{
+    width: 91.66666667%;
+}
+.row > .cell-12
+{
+    width: 100%;
+}
+.column > .cell-1
+{
+    height: 8.33333333%;
+}
+.column > .cell-2
+{
+    height: 16.66666667%;
+}
+.column > .cell-3
+{
+    height: 25%;
+}
+.column > .cell-4
+{
+    height: 33.33333333%;
+}
+.column > .cell-5
+{
+    height: 41.66666667%;
+}
+.column > .cell-6
+{
+    height: 50%;
+}
+.column > .cell-7
+{
+    height: 58.33333333%;
+}
+.column > .cell-8
+{
+    height: 66.66666667%;
+}
+.column > .cell-9
+{
+    height: 75%;
+}
+.column > .cell-10
+{
+    height: 83.33333333%;
+}
+.column > .cell-11
+{
+    height: 91.66666667%;
+}
+.column > .cell-12
+{
+    height: 100%;
+}
+.row,
+.column
+{
+    margin: -.25rem -.25rem 0;
+}
+.row:not(:last-child),
+.column:not(:last-child)
+{
+    margin-bottom: .25rem;
+}
+.row .row,
+.column .row,
+.row .column,
+.column .column
+{
+    margin: -.25rem;
+}
+.row .cell,
+.column .cell,
+.row [class^='cell-'],
+.column [class^='cell-'],
+.row [class*=' cell-'],
+.column [class*=' cell-']
+{
+    padding: .25rem;
+}
+.row.gutter-lg,
+.column.gutter-lg
+{
+    margin: -.5rem -.5rem 0;
+}
+.row.gutter-lg:not(:last-child),
+.column.gutter-lg:not(:last-child)
+{
+    margin-bottom: .5rem;
+}
+.row.gutter-lg .row,
+.column.gutter-lg .row,
+.row.gutter-lg .column,
+.column.gutter-lg .column
+{
+    margin: -.5rem;
+}
+.row.gutter-lg .cell,
+.column.gutter-lg .cell,
+.row.gutter-lg [class^='cell-'],
+.column.gutter-lg [class^='cell-'],
+.row.gutter-lg [class*=' cell-'],
+.column.gutter-lg [class*=' cell-']
+{
+    padding: .5rem;
+}
+.row.gutter-sm,
+.column.gutter-sm
+{
+    margin: -.125rem -.125rem 0;
+}
+.row.gutter-sm:not(:last-child),
+.column.gutter-sm:not(:last-child)
+{
+    margin-bottom: .125rem;
+}
+.row.gutter-sm .row,
+.column.gutter-sm .row,
+.row.gutter-sm .column,
+.column.gutter-sm .column
+{
+    margin: -.125rem;
+}
+.row.gutter-sm .cell,
+.column.gutter-sm .cell,
+.row.gutter-sm [class^='cell-'],
+.column.gutter-sm [class^='cell-'],
+.row.gutter-sm [class*=' cell-'],
+.column.gutter-sm [class*=' cell-']
+{
+    padding: .125rem;
+}
+.row.gutterless,
+.column.gutterless,
+.row.gutterless .row,
+.column.gutterless .row,
+.row.gutterless .column,
+.column.gutterless .column
+{
+    margin: 0!important;
+}
+.row.gutterless .cell,
+.column.gutterless .cell,
+.row.gutterless [class^='cell-'],
+.column.gutterless [class^='cell-'],
+.row.gutterless [class*=' cell-'],
+.column.gutterless [class*=' cell-']
+{
+    padding: 0 !important;
+}
+

@@ -18,7 +18,8 @@ if(RUN_MODE != 'front')
     }
 
 }
-$config->rights->guest['record']['admin']    = 'admin';
+$config->rights->guest['record']['admin']  = 'admin';
+$config->rights->guest['inside']['browse'] = 'browse';
 
 $config->rights->member['record']['edit']     = 'edit';
 $config->rights->member['record']['view']     = 'view';
@@ -28,3 +29,4 @@ $config->rights->member['record']['create']   = 'create';
 $config->rights->member['record']['confirm']  = 'confirm';
 $config->rights->member['record']['finish']   = 'finish';
 $config->rights->member['record']['assignTo'] = 'assignTo';
+$config->rights->member['inside']['browse']   = 'browse';

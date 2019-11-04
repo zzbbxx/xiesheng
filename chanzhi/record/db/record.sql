@@ -6,7 +6,7 @@ CREATE TABLE `xs_record` (
     `carID` mediumint(8) NOT NULL,
     `beginDate` datetime NOT NULL,
     `finishDate` datetime NOT NULL,
-    `route` text NOT NUll,
+    `route` text NOT NULL,
     `distance` smallint(5) unsigned NOT NULL default 0,
     `tolls` decimal(8,2) NOT NULL default 0.00,
     `parking` decimal(8,2) NOT NULL default 0.00,

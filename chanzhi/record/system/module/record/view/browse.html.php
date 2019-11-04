@@ -10,11 +10,11 @@
         <tr class='text-center'>
           <?php $vars = "driver=all&orderBy={$orderBy}&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}";?>
           <th class='w-60px'><?php commonModel::printOrderLink('id', $orderBy, $vars, $lang->record->id);?></th>
-          <th class='w-120px'><?php commonModel::printOrderLink('beginDate', $orderBy, $vars, $lang->record->beginDate);?></th>
-          <th class='w-120px'><?php commonModel::printOrderLink('finishDate', $orderBy, $vars, $lang->record->finishDate);?></th>
-          <th class='w-80px'><?php commonModel::printOrderLink('customer', $orderBy, $vars, $lang->record->customer);?></th>
+          <th class='w-140px'><?php commonModel::printOrderLink('beginDate', $orderBy, $vars, $lang->record->beginDate);?></th>
+          <th class='w-140px'><?php commonModel::printOrderLink('finishDate', $orderBy, $vars, $lang->record->finishDate);?></th>
+          <th class='w-100px'><?php commonModel::printOrderLink('customer', $orderBy, $vars, $lang->record->customer);?></th>
           <th><?php commonModel::printOrderLink('route', $orderBy, $vars, $lang->record->route);?></th>
-          <th class='w-80px'><?php commonModel::printOrderLink('car', $orderBy, $vars, $lang->record->car);?></th>
+          <th class='w-100px'><?php commonModel::printOrderLink('car', $orderBy, $vars, $lang->record->car);?></th>
           <th class='w-80px'><?php commonModel::printOrderLink('driver', $orderBy, $vars, $lang->record->driver);?></th>
           <th class='w-80px'><?php commonModel::printOrderLink('status', $orderBy, $vars, $lang->record->status);?></th>
           <th class='w-100px'><?php echo $lang->actions;?></th>
@@ -26,9 +26,9 @@
           <td><?php echo $record->id;?></td>
           <td><?php echo $record->beginDate;?></td>
           <td><?php echo $record->finishDate;?></td>
-          <td><?php echo $customerList[$record->customerID];?></td>
+          <td><?php echo empty($record->customerID) ? '' : $customerList[$record->customerID];?></td>
           <td><?php echo $record->route;?></td>
-          <td><?php echo $carList[$record->carID];?></td>
+          <td><?php echo empty($record->carID) ? '' : $carList[$record->carID];?></td>
           <td><?php echo $driverList[$record->driverID];?></td>
           <td><?php if($record->status) echo $lang->record->statusList[$record->status];?></td>
           <td>

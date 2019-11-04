@@ -6,7 +6,7 @@ class customerModel extends model
         return $this->dao->select('*')->from(TABLE_XS_CUSTOMER)->where('id')->eq($customerID)->fetch();
     }
 
-    public function getCustomers($orderBy = 'desc', $pageID = '')
+    public function getCustomers($orderBy = 'id desc', $pageID = '')
     {
         return $this->dao->select('*')->from(TABLE_XS_CUSTOMER)->orderBy($orderBy)->page($pageID)->fetchAll();
     }

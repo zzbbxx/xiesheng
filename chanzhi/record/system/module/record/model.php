@@ -13,7 +13,7 @@ class recordModel extends model
             ->beginIF($carID != '0')->andWhere('carID')->eq($carID)->fi()
             ->beginIF($status != 'all')->andWhere('status')->eq($status)->fi()
             ->beginIF($driverID != '0')->andWhere('driverID')->eq($driverID)->fi()
-            ->beginIF($customerID != '0')->andWhere('customerID')->eq($customerID)->fi()
+            ->beginIF($customerID != '0' && $this->app->user->admin == 'no')->andWhere('customerID')->eq($customerID)->fi()
             ->beginIF(!empty($beginDate))->andWhere('beginDate')->gt($beginDate)->fi()
             ->beginIF(!empty($finishDate))->andWhere('finishDate')->lt($finishDate)->fi()
             ->orderBy($orderBy)

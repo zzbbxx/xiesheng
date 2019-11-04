@@ -9,10 +9,10 @@
       <thead>
         <tr class='text-center'>
           <th class='w-60px'><?php echo $lang->customer->id;?></th>
-          <th><?php echo $lang->customer->abbreviation;?></th>
-          <th class='w-200px'><?php echo $lang->customer->name;?></th>
+          <th class='w-100px'><?php echo $lang->customer->abbreviation;?></th>
+          <th class='w-300px'><?php echo $lang->customer->name;?></th>
           <th class='w-400px'><?php echo $lang->customer->address;?></th>
-          <th class='w-180px'><?php echo $lang->customer->addedDate;?></th>
+          <th class='w-140px'><?php echo $lang->customer->addedDate;?></th>
           <th><?php echo $lang->actions;?></th>
         </tr>
       </thead>

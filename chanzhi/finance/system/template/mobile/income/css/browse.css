@@ -1,0 +1,5 @@
+ul,li{margin:0;padding:0;}
+.container{padding:10px;}
+.container ul{flex-direction:row;display:flex;justify-content:center;}
+.container li{background:#fff;padding:10px;list-style:none;margin:10px;flex:1;text-align:center;
+border-radius: 6px;box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);}
