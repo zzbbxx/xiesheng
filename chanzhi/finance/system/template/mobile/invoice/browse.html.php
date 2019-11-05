@@ -11,7 +11,7 @@
 {if($createDate != date('Y-m', strtotime($invoice->createDate)))}
 {$createDate = date('Y-m', strtotime($invoice->createDate));}
 <hr>
-<div class=''>{$createDate}</div>
+<div class='dateTitle'>{$createDate}</div>
 {/if}
 <div class='panel panel-section'> 
   <div class='panel-heading page-header'>

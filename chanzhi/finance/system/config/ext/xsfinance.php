@@ -25,6 +25,15 @@ $config->rights->guest['invoice']['browse'] = 'browse';
 $config->rights->guest['invoice']['create'] = 'create';
 $config->rights->guest['invoice']['edit']   = 'edit';
 
+$config->rights->guest['income']['view']   = 'view';
+$config->rights->guest['income']['browse'] = 'browse';
+$config->rights->guest['income']['create'] = 'create';
+$config->rights->guest['income']['edit']   = 'edit';
+
+$config->rights->guest['outlay']['view']   = 'view';
+$config->rights->guest['outlay']['browse'] = 'browse';
+$config->rights->guest['outlay']['create'] = 'create';
+$config->rights->guest['outlay']['edit']   = 'edit';
 
 $config->rights->member['finance']['browse'] = 'browse';
 $config->rights->member['invoice']['browse'] = 'browse';

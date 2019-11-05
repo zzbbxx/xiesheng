@@ -8,6 +8,7 @@ CREATE TABLE `xs_income` (
     `createDate` datetime NOT NULL,
     `addedDate` datetime NOT NULL,
     `addedBy` char(30) NOT NULL default '',
+    `remark` text NOT NULL,
     `lang` char(30) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;

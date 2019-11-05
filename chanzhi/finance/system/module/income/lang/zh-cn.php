@@ -18,6 +18,7 @@ $lang->income->id         = '序号';
 $lang->income->name       = '名称';
 $lang->income->type       = '类型';
 $lang->income->money      = '金额';
+$lang->income->remark     = '备注';
 $lang->income->createDate = '创建日期';
 $lang->income->invoice    = '关联发票';
 $lang->income->invoiceID  = '关联发票ID';

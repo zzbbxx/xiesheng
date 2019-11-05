@@ -1,7 +1,7 @@
 <?php
 class invoice extends control
 {
-    public function browse($orderBy = 'createDate_asc', $customerID = 0, $beginDate = '', $finishDate = '', $recTotal = 0, $recPerPage = 20, $pageID = 1)
+    public function browse($orderBy = 'createDate_desc', $customerID = 0, $beginDate = '', $finishDate = '', $recTotal = 0, $recPerPage = 20, $pageID = 1)
     {
         if($this->app->user->account == 'guest') $this->locate(helper::createLink('user', 'login', "referer=" . helper::safe64Encode($this->createLink('invoice', 'browse'))));
 

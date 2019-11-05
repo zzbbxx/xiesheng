@@ -1,7 +1,7 @@
 <?php
 class income extends control
 {
-    public function browse($orderBy = 'id_asc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
+    public function browse($orderBy = 'createDate_desc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
     {
         $this->app->loadClass('pager', $static = true);
         $pager = new pager($recTotal, $recPerPage, $pageID);
@@ -10,6 +10,7 @@ class income extends control
         $this->view->pager   = $pager;
         $this->view->orderBy = $orderBy;
 
+        $this->view->admin        = $this->app->user->admin;
         $this->view->incomes      = $this->income->getIncomes($orderBy, $pageID);
         $this->view->invoiceList  = $this->loadModel('invoice')->getInvoicesByType('number');
         $this->view->customerList = $this->loadModel('customer')->getCustomersByType('name');

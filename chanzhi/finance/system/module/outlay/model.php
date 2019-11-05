@@ -16,7 +16,7 @@ class outlayModel extends model
         return $this->dao->select('*')->from(TABLE_XS_OUTLAY)->fetchPairs('id', $type);
     }
 
-    public function create($orderBy, $pagerID)
+    public function create()
     {
         $outlay = fixer::input('post')
             ->setDefault('addedDate', helper::now())

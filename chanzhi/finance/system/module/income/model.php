@@ -16,7 +16,7 @@ class incomeModel extends model
         return $this->dao->select('*')->from(TABLE_XS_INCOME)->fetchPairs('id', $type);
     }
 
-    public function create($orderBy, $pagerID)
+    public function create()
     {
         if($_POST['type'] == 'enterprise') $_POST['name'] = $_POST['enterpriseName']; 
         if($_POST['type'] == 'individual') $_POST['name'] = $_POST['individualName']; 

@@ -1,7 +1,7 @@
 <?php
 class outlay extends control
 {
-    public function browse($orderBy = 'id_asc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
+    public function browse($orderBy = 'createDate_desc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
     {
         $this->app->loadClass('pager', $static = true);
         $pager = new pager($recTotal, $recPerPage, $pageID);
@@ -10,7 +10,8 @@ class outlay extends control
         $this->view->pager   = $pager;
         $this->view->orderBy = $orderBy;
 
-        $this->view->outlays      = $this->outlay->getOutlays($orderBy, $pageID);
+        $this->view->admin      = $this->app->user->admin;
+        $this->view->outlays    = $this->outlay->getOutlays($orderBy, $pageID);
         $this->view->driverList = $this->loadModel('driver')->getDriversByType('name');
         $this->display();
     }
