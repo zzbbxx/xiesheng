@@ -2,6 +2,10 @@
 <?php include '../../common/view/header.modal.html.php';?>
 <table class='table table-form'>
   <tr>
+    <th class='w-80px'><?php echo $lang->company;?></th>
+    <td><?php echo $lang->childrenCompany[$invoice->companyID];?></td>
+  </tr>
+  <tr>
     <th class='w-80px'><?php echo $lang->invoice->number;?></th>
     <td><?php echo $invoice->number;?></td>
   </tr>

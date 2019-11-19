@@ -29,7 +29,7 @@ class income extends control
 
         $this->view->title        = $this->lang->income->create;
         $this->view->customerList = $this->loadModel('customer')->getCustomersByType('name');
-        $this->view->invoiceList  = $this->loadModel('invoice')->getInvoicesByType('number');
+        $this->view->invoiceList  = array('0' => '') + $this->loadModel('invoice')->getInvoicesByType('number');
         $this->display();
     }
 

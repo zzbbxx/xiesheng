@@ -13,7 +13,7 @@
         <tr>
           <th>{$lang->outlay->money}</th>
           <td>
-            {!html::input("money", '', "class='form-control w-200px'")}
+            <input type='number' id='money' name='money' value='' class='form-control' />
           </td>
         </tr>
         <tr>

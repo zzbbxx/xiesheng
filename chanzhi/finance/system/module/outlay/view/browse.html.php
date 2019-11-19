@@ -9,7 +9,8 @@
       <thead>
         <tr class='text-center'>
           <th class='w-60px'><?php echo $lang->outlay->id;?></th>
-          <th class='w-240px'><?php echo $lang->outlay->driver;?></th>
+          <th class='w-240px'><?php echo $lang->company;?></th>
+          <th class='w-140px'><?php echo $lang->outlay->driver;?></th>
           <th class='w-60px'><?php echo $lang->outlay->type;?></th>
           <th class='w-100px'><?php echo $lang->outlay->money;?></th>
           <th class='w-180px'><?php echo $lang->outlay->createDate;?></th>
@@ -21,6 +22,7 @@
         <?php foreach($outlays as $outlay):?>
         <tr class='text-center text-top'>
           <td><?php echo $outlay->id;?></td>
+          <td><?php echo $lang->childrenCompany[$outlay->companyID];?></td>
           <td><?php echo $driverList[$outlay->driverID];?></td>
           <td><?php echo $lang->outlay->typeList[$outlay->type];?></td>
           <td><?php echo $outlay->money;?></td>

@@ -21,3 +21,10 @@ $lang->invoice->menu = new stdclass();
 $lang->invoice->menu->income = '收入|income|browse|';
 $lang->invoice->menu->outlay = '支出|outlay|browse|';
 $lang->invoice->menu->invoice= '发票|invoice|browse|';
+
+/* Children Company */
+$lang->company = '公司';
+$lang->childrenCompany    = array(); 
+$lang->childrenCompany[0] = '青岛协盛汽车租赁有限公司';
+$lang->childrenCompany[1] = '青岛鑫协盛汽车服务有限公司';
+$lang->childrenCompany[2] = '其他公司代开发票';

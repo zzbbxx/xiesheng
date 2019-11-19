@@ -9,8 +9,13 @@
     <form method='post' id='ajaxForm' class="w-p50">
       <table class='table table-form'>
         <tr>
+          <th><?php echo $lang->company;?></th>
+          <td><?php echo html::select('companyID', $lang->childrenCompany, $invoice->companyID, "class='form-control w-300px'");?></td>
+        </tr>
+        <tr>
           <th><?php echo $lang->invoice->type;?></th>
           <td><?php echo html::select('type', $lang->invoice->typeList, $invoice->type, "class='form-control w-300px'");?></td>
+        </tr>
         <tr>
           <th><?php echo $lang->invoice->money;?></th>
           <td><?php echo html::input('money', $invoice->money, "class='form-control w-300px'");?></td>

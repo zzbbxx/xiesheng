@@ -9,6 +9,7 @@
       <thead>
         <tr class='text-center'>
           <th class='w-60px'><?php echo $lang->income->id;?></th>
+          <th class='w-240px'><?php echo $lang->company;?></th>
           <th class='w-240px'><?php echo $lang->income->name;?></th>
           <th class='w-60px'><?php echo $lang->income->type;?></th>
           <th class='w-100px'><?php echo $lang->income->money;?></th>
@@ -21,11 +22,16 @@
         <?php foreach($incomes as $income):?>
         <tr class='text-center text-top'>
           <td><?php echo $income->id;?></td>
+          <td><?php echo $lang->childrenCompany[$income->companyID];?></td>
           <td><?php echo $income->type == 'individual' ? $income->name : $customerList[$income->name];?></td>
           <td><?php echo $lang->income->typeList[$income->type];?></td>
           <td><?php echo $income->money;?></td>
           <td><?php echo $income->createDate;?></td>
+          <?php if(!empty($income->invoiceID)):?>
           <td><?php echo html::a(helper::createLink('invoice', 'view', "id=$income->invoiceID"), $invoiceList[$income->invoiceID], "data-toggle='modal'");?></td>
+          <?php else:?>
+          <td></td>
+          <?php endif;?>
           <td>
             <?php commonModel::printLink('income', 'edit', "incomeID=$income->id", $lang->edit);?>
             <?php commonModel::printLink('income', 'delete', "incomeID=$income->id", $lang->delete, 'class="deleter"');?>

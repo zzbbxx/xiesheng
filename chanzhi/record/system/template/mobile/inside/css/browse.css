@@ -1,4 +1,5 @@
 .m-inside .insideIcon{flex: 1 !important;}
+.insideIconLink{margin: auto;}
 .insideIconLink img{padding:10px;}
 .insideIconLink .title{text-align:center;}
 
@@ -7,7 +8,6 @@
 {
     display: -ms-flexbox;
     display: flex;
-
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -ms-flex-align: stretch;

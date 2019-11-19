@@ -5,6 +5,12 @@
     <form method='post' id='ajaxForm' class="w-p50">
       <table class='table table-form table-layout'>
         <tr>
+          <th>{$lang->company}</th>
+          <td>
+            {!html::select("companyID", $lang->childrenCompany, '', "class='form-control w-200px'")}
+          </td>
+        </tr>
+        <tr>
           <th>{$lang->invoice->customer}</th>
           <td>
             {!html::select("customerID", $customerList, '', "class='form-control w-200px'")}
@@ -19,13 +25,13 @@
         <tr>
           <th>{$lang->invoice->money}</th>
           <td>
-            {!html::input("money", '', "class='form-control w-200px'")}
+            <input type='number' id='money' name='money' value='' class='form-control' />
           </td>
         </tr>
         <tr>
           <th>{$lang->invoice->number}</th>
           <td>
-            {!html::input("number", '', "class='form-control w-200px'")}
+            <input type='number' id='number' name='number' value='' class='form-control' />
           </td>
         </tr>
         <tr>

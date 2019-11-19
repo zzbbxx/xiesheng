@@ -9,6 +9,7 @@
       <thead>
         <tr class='text-center'>
           <th class='w-60px'><?php echo $lang->invoice->id;?></th>
+          <th class='w-180px'><?php echo $lang->company;?></th>
           <th class='w-140px'><?php echo $lang->invoice->type;?></th>
           <th class='w-180px'><?php echo $lang->invoice->number;?></th>
           <th class='w-200px'><?php echo $lang->invoice->customer;?></th>
@@ -22,6 +23,7 @@
         <?php foreach($invoices as $invoice):?>
         <tr class='text-center text-top'>
           <td><?php echo $invoice->id;?></td>
+          <td><?php echo $lang->childrenCompany[$invoice->companyID];?></td>
           <td><?php echo $lang->invoice->typeList[$invoice->type];?></td>
           <td><?php echo $invoice->number;?></td>
           <td><?php echo $customerList[$invoice->customerID];?></td>

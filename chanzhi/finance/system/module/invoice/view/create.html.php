@@ -9,6 +9,10 @@
     <form method='post' id='ajaxForm' class="w-p50">
       <table class='table table-form'>
         <tr>
+          <th><?php echo $lang->company;?></th>
+          <td><?php echo html::select('companyID', $lang->childrenCompany, '', "class='form-control w-300px'");?></td>
+        </tr>
+        <tr>
           <th><?php echo $lang->invoice->type;?></th>
           <td><?php echo html::select('type', $lang->invoice->typeList, '', "class='form-control w-300px'");?></td>
         </tr>

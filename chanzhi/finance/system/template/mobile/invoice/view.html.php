@@ -6,6 +6,7 @@
   <div class='panel-body'>
     <table class="table table-layout">
       <tbody> 
+        <tr><th>{$lang->company}</th><td>{$lang->childrenCompany[$invoice->companyID]}</td></tr>
         <tr><th>{$lang->invoice->type}</th><td>{$lang->invoice->typeList[$invoice->type]}</td></tr>
         <tr><th>{$lang->invoice->id}</th><td>{$invoice->id}</td></tr>
         <tr><th>{$lang->invoice->number}</th><td>{$invoice->number}</td></tr>
