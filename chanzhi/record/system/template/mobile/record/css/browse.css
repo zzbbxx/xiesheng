@@ -4,7 +4,19 @@
 .input-group-addon.fix-padding{padding:2px 6px;}
 .input-group-addon.fix-border{border:none;}
 .input-group .form-control{padding: 4px;height:26px;line-height:26px;}
-.actions{margin-bottom:10px;}
+.panel{border-radius: 6px;}
+.panel .header{line-height:28px;padding:10px;padding-bottom:0;}
+.panel .title{font-weight:500;font-size:24px;}
+.panel .route{font-weight:500;font-size:14px;line-height:20px;}
+.panel .info{font-weight:400;font-size:12px;line-height:20px;}
+.actions{margin: 10px 0;}
 .actions ul, .actions li{margin:0;padding:0;list-style:none;}
 .actions li{width:23%;margin:0 1%;float:left;}
-.actions .btn{line-height:24px;padding: 2px 4px;width: 100%;font-weight:700;}
+.actions .btn{line-height:24px;padding: 2px 4px;width: 100%;border-radius:4px;color: #666;}
+.header-action {
+    position: fixed;
+    border-radius: 0;
+    width: 100%;
+    padding: 0 10px 6px 10px;
+}
+.main{margin-top: 100px;}

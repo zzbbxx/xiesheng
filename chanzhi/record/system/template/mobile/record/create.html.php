@@ -32,7 +32,7 @@
           <th>{$lang->record->route}</th>
           <td>
             <div class="input-append date">
-              {!html::textarea('route', '', "class='form-control' rows=6")}
+              {!html::textarea('route', '', "class='form-control' rows=4")}
             </div>
           </td>
         </tr>
@@ -40,7 +40,7 @@
           <th>{$lang->record->remark}</th>
           <td>
             <div class="input-append date">
-              {!html::textarea('remark', '', "class='form-control' rows=6")}
+              {!html::textarea('remark', '', "class='form-control' rows=2")}
             </div>
           </td>
         </tr>

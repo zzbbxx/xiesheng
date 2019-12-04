@@ -8,8 +8,7 @@
 {!js::set('startDate', $beginDate)}
 {!js::set('endDate', $finishDate)}
 {!js::set('baseParameter', $baseParameter)}
-<div class='panel panel-action'> 
-  <div class='panel-heading page-header'>
+<div class='panel header-action'> 
     <div class="input-group">
       <span class="input-group-addon fix-border fix-padding">{$lang->record->start}</span>
       <input type='date' value={$startHtmlDate} id='searchStartDate' class="form-control"/>
@@ -23,31 +22,22 @@
       {!html::a(inlink('browse', "status=receive" . $baseParameter . $dateParameter), $lang->record->statusList['receive'], "class='btn text-primary'")}
       {!html::a(inlink('browse', "status=wait" . $baseParameter . $dateParameter), $lang->record->statusList['wait'], "class='btn text-warning'")}
     </div>
-  </div>
 </div>
+<div class='main'>
 {foreach($records as $record)}
+{$beginTime = date('H:i', strtotime($record->beginDate))}
 <div class='panel panel-section'> 
-  <div class='panel-heading page-header'>
-    <div class='title'>
-      {!html::a(inlink('view', "recordID=$record->id"), $customerList[$record->customerID], "class='btn-link'")}
-    </div>
-    <div>{$record->status ? $lang->record->statusLabelList[$record->status] : ''}</div>
+  <div class='header clearfix'>
+    {!html::a(inlink('view', "id=$record->id"), $beginTime, "class='pull-left title'")}
+    <div class='pull-right'>{$record->status ? $lang->record->statusLabelList[$record->status] : ''}</div>
   </div>
+  <hr>
   <div class='panel-body'>
-    <div><span class='text-info'>{$lang->record->route}</span> : {$record->route}</div>
-    <hr>
-    <table class="table table-layout">
-      <tbody> 
-        <tr><th>{$lang->record->driver}</th><td>{$driverList[$record->driverID]}</td></tr> 
-        <tr><th>{$lang->record->car}</th><td>{$carList[$record->carID]}</td></tr>
-        <tr><th>{$lang->record->beginDate}</th><td>{$record->beginDate}</td></tr>
-        <tr><th>{$lang->record->finishDate}</th><td>{$record->finishDate}</td></tr>
-        {if(!empty($record->remark))}
-        <tr><th>{$lang->record->remark}</th><td>{$record->remark}</td></tr>
-        {/if}
-      </tbody>
-    </table>
-    <hr>
+    <div class='route'>{$record->route}</div>
+    <div class='clearfix info'>
+      <div class='pull-left'>{$driverList[$record->driverID]}</div>
+      <div class='pull-right'>{$carList[$record->carID]}</div>
+    </div>
     <div class='actions'>
       <ul class='clearfix'>
         {if($record->status == 'wait')}
@@ -63,4 +53,5 @@
   </div>
 </div>
 {/foreach}
+</div>
 {include $control->loadModel('ui')->getEffectViewFile('mobile', 'common', 'footer')}

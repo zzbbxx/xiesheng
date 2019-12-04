@@ -6,7 +6,7 @@ class carModel extends model
         return $this->dao->select('*')->from(TABLE_XS_CAR)->where('id')->eq($carID)->fetch();
     }
 
-    public function getCars($orderBy = 'desc', $pageID = '')
+    public function getCars($orderBy = 'id_desc', $pageID = '0')
     {
         return $this->dao->select('*')->from(TABLE_XS_CAR)->orderBy($orderBy)->page($pageID)->fetchAll();
     }

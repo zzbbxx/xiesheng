@@ -1,0 +1,18 @@
+.label {
+    font-size: .6rem;
+    line-height: 1;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    min-width: 1rem;
+    height: 1rem;
+    padding: 0 .25rem;
+    vertical-align: middle;
+    border: .05rem solid transparent;
+    background-color: rgba(0,0,0,.103);
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}

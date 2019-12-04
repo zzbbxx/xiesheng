@@ -1,0 +1,10 @@
+.record-date{font-size:14px;}
+.table-layout>tbody>tr>th{width:auto;min-width:90px;}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{padding:4px;text-align: justify;}
+.input-group-addon.fix-padding{padding:2px 6px;}
+.input-group-addon.fix-border{border:none;}
+.input-group .form-control{padding: 4px;height:26px;line-height:26px;}
+.actions{margin-bottom:10px;}
+.actions ul, .actions li{margin:0;padding:0;list-style:none;}
+.actions li{width:23%;margin:0 1%;float:left;}
+.actions .btn{line-height:24px;padding: 2px 4px;width: 100%;font-weight:700;}

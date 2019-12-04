@@ -15,6 +15,17 @@
         </a>
       </div>
     </div>
+    <div class='row'>
+      <div class='cell insideIcon'>
+        <a class='insideIconLink' href='{$control->createLink("car", "admin")}'>
+          <img src='/theme/mobile/common/img/note.png'/>
+          <div class='title'>{$lang->inside->car}</div>
+        </a>
+      </div>
+      <div class='cell insideIcon'>
+        <a class='insideIconLink' href='{$control->createLink("finance", "browse")}'>
+        </a>
+      </div>
     </div>
   </div>
 </div>

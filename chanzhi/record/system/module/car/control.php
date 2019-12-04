@@ -1,6 +1,19 @@
 <?php
 class car extends control
 {
+    public function admin()
+    {
+        if($this->app->user->account == 'guest') $this->locate(helper::createLink('user', 'login', "referer=" . helper::safe64Encode($this->createLink('car', 'admin'))));
+        if(RUN_MODE == 'front' && $this->app->user->admin == 'no' && $this->app->user->driverID == 0) $this->locate(helper::createLink('errors')); 
+
+        $this->view->title        = $this->lang->car->browse;
+        $this->view->mobileTitle  = $this->lang->car->browse;
+
+        $this->view->driverID     = $this->app->user->driverID;
+        $this->view->admin        = $this->app->user->admin;
+        $this->display();
+    }
+
     public function browse($orderBy = 'id_asc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
     {
         $this->app->loadClass('pager', $static = true);
@@ -10,6 +23,7 @@ class car extends control
         $this->view->pager   = $pager;
         $this->view->orderBy = $orderBy;
         $this->view->cars    = $this->car->getCars($orderBy, $pageID);
+        $this->view->admin   = $this->app->user->admin;
         $this->display();
     }
 
@@ -45,6 +59,15 @@ class car extends control
 
         $this->view->title = $this->lang->car->edit;
         $this->view->car   = $this->car->getCarByID($carID);
+        $this->display();
+    }
+
+    public function review()
+    {
+        $this->view->title   = $this->lang->car->review;
+        $this->view->cars    = $this->car->getCars();
+        $this->view->admin   = $this->app->user->admin;
+
         $this->display();
     }
 }

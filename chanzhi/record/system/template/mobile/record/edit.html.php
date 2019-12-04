@@ -25,14 +25,14 @@
         <tr>
           <th>{$lang->record->beginDate}</th>
           <td>
-            <input type="datetime-local" class='form-control' value='' name='beginDate'>
+            <input type="datetime-local" class='form-control' value="{$record->beginDate}" name='beginDate'>
           </td>
         </tr>
         <tr>
           <th>{$lang->record->route}</th>
           <td>
             <div class="input-append date">
-              {!html::textarea('route', $record->route, "class='form-control' rows=6")}
+              {!html::textarea('route', $record->route, "class='form-control' rows=3")}
             </div>
           </td>
         </tr>
@@ -40,7 +40,7 @@
           <th>{$lang->record->remark}</th>
           <td>
             <div class="input-append date">
-              {!html::textarea('remark', $record->remark, "class='form-control' rows=6")}
+              {!html::textarea('remark', $record->remark, "class='form-control' rows=2")}
             </div>
           </td>
         </tr>

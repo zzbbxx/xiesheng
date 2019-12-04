@@ -33,7 +33,11 @@ $lang->car->expiryDate   = '检验有效期';
 $lang->car->luCard       = '鲁通卡';
 $lang->car->qinCard      = '琴岛通';
 
-$lang->car->duplicatePlate= '车辆已存在，请确认后再添加!';
+$lang->car->duplicatePlate = '车辆已存在，请确认后再添加!';
+
+$lang->car->review      = '待办车辆';
+$lang->car->violation   = '违章';
+$lang->car->maintenance = '保养维修';
 
 $lang->car->typeList = array();
 $lang->car->typeList['car']    = '轿车';
