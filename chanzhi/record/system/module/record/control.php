@@ -36,7 +36,6 @@ class record extends control
      * @param   int $carID
      * @param   int $driverID
      * @param   date $beginDate
-     * @param   date $finishDate
      * @param   string $orderBy
      * @param   string $recTotal
      * @param   string $recPerPage
@@ -45,7 +44,7 @@ class record extends control
      * @access public
      * @return void
      * */
-    public function browse($status = 'all', $customerID = '0', $carID = '0', $driverID = '0', $beginDate = '', $finishDate = '', $orderBy = 'id_desc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
+    public function browse($status = 'all', $customerID = '0', $carID = '0', $driverID = '0', $beginDate = '', $orderBy = 'beginDate_desc', $recTotal = 0, $recPerPage = 20, $pageID = 1)
     {
         if(RUN_MODE == 'front' && $this->app->user->admin == 'no' && $this->app->user->driverID == 0) $this->locate(helper::createLink('errors')); 
 
@@ -62,9 +61,8 @@ class record extends control
         $this->view->driverID   = $driverID;
         $this->view->customerID = $customerID;
         $this->view->beginDate  = str_replace('-', '.', $beginDate);
-        $this->view->finishDate = str_replace('-', '.', $finishDate);
 
-        $this->view->records      = $this->record->getRecords($status, $customerID, $carID, $driverID, $beginDate, $finishDate, $orderBy, $pageID);
+        $this->view->records      = $this->record->getRecords($status, $customerID, $carID, $driverID, $beginDate, $orderBy, $pageID);
         $this->view->carList      = $this->loadModel('car')->getCarsByType('plate');
         $this->view->driverList   = $this->loadModel('driver')->getDriversByType('name');
         $this->view->customerList = $this->loadModel('customer')->getCustomersByType('abbreviation');
@@ -77,8 +75,10 @@ class record extends control
         if(RUN_MODE == 'front' && $this->app->user->admin == 'no' && $this->app->user->driverID == 0) $this->locate(helper::createLink('errors')); 
         if($_POST)
         {
-            $result = $this->record->create();
-            if($result) $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess,'locate' => inlink('browse')));
+            $result    = $this->record->create();
+            $beginDate = str_replace('-', '.', date('Y-m-d', strtotime($result->beginDate)));
+
+            if($result) $this->send(array('result' => 'success', 'message' => $this->lang->saveSuccess,'locate' => inlink('browse', "status=&customerID=0&carID=0&driverID=0&beginDate={$beginDate}")));
             if(dao::isError()) $this->send(array('result' => 'fail', 'message' => dao::getError()));
         }
 

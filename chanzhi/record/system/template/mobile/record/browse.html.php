@@ -1,19 +1,15 @@
 {include $control->loadModel('ui')->getEffectViewFile('mobile', 'common', 'header.simple')}
 {$date = date('Y-m-d')}
 {$startHtmlDate = empty($beginDate) ? $date : str_replace('.', '-', $beginDate)}
-{$endHtmlDate = empty($finishDate) ? $date : str_replace('.', '-', $finishDate)}
-{$dateParameter = "&beginDate=$beginDate&finishDate=$finishDate"}
+{$dateParameter = "&beginDate=$beginDate"}
 {$baseParameter = "&customerID=$customerID&carID=$carID&driverID=$driverID"}
 {!js::set('status', $status)}
 {!js::set('startDate', $beginDate)}
-{!js::set('endDate', $finishDate)}
 {!js::set('baseParameter', $baseParameter)}
 <div class='panel header-action'> 
     <div class="input-group">
       <span class="input-group-addon fix-border fix-padding">{$lang->record->start}</span>
       <input type='date' value={$startHtmlDate} id='searchStartDate' class="form-control"/>
-      <span class="input-group-addon fix-border fix-padding">{$lang->record->end}</span>
-      <input type='date' value={$endHtmlDate} id='searchEndDate' class="form-control"/>
     </div>
     <hr>
     <div class="input-group">
@@ -24,9 +20,14 @@
     </div>
 </div>
 <div class='main'>
+{$startDate = '';}
 {foreach($records as $record)}
 {$beginTime = date('H:i', strtotime($record->beginDate))}
-<div class='panel panel-section'> 
+{if($startDate != date('Y-m-d', strtotime($record->beginDate)) && empty($beginDate))}
+{$startDate = date('Y-m-d', strtotime($record->beginDate));}
+<div class='dateTitle'>{$startDate}</div>
+{/if}
+<div class='panel panel-section item'>
   <div class='header clearfix'>
     {!html::a(inlink('view', "id=$record->id"), $beginTime, "class='pull-left title'")}
     <div class='pull-right'>{$record->status ? $lang->record->statusLabelList[$record->status] : ''}</div>

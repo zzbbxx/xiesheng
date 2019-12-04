@@ -1,6 +1,6 @@
 {include $control->loadModel('ui')->getEffectViewFile('mobile', 'common', 'header.simple')}
 {!js::set('driverID', $driverID)}
-{!js::set('date', date('Y-m-d'))}
+{!js::set('now', date('Y-m-d'))}
 {if($admin != 'no')}
 <div class='panel header-action'>{!html::a(inlink('create'), $lang->record->create, "class='btn'")}</div>
 {/if}

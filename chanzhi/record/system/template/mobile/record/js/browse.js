@@ -5,7 +5,7 @@ $(function ()
     $('#searchStartDate').on('change', function ()
     {
         var startDate = $(this).val().replace(/-/g, '.');
-        var parameter = 'status=' + v.status + v.baseParameter + '&beginDate=' + startDate + '&finishDate=' + endDate;
+        var parameter = 'status=' + v.status + v.baseParameter + '&beginDate=' + startDate;
 
         window.location = createLink('record', 'browse', parameter); 
     });
@@ -13,7 +13,7 @@ $(function ()
     $('#searchEndDate').on('change', function ()
     {
         var endDate = $(this).val().replace(/-/g, '.');
-        var parameter = 'status=' + v.status + v.baseParameter + '&beginDate=' + startDate + '&finishDate=' + endDate;
+        var parameter = 'status=' + v.status + v.baseParameter + '&beginDate=' + startDate;
 
         window.location = createLink('record', 'browse', parameter); 
     });

@@ -6,19 +6,32 @@ class recordModel extends model
         return $this->dao->select('*')->from(TABLE_XS_RECORD)->where('id')->eq($recordID)->fetch();
     }
 
-    public function getRecords($status = 'all', $customerID = '0', $carID = '0', $driverID = '0', $beginDate = '', $finishDate = '', $orderBy = 'desc', $pageID = '1')
+    public function getRecords($status = 'all', $customerID = '0', $carID = '0', $driverID = '0', $beginDate = '', $orderBy = 'beginDate_desc', $pageID = '1')
     {
-        return $this->dao->select('*')->from(TABLE_XS_RECORD)
+        $recordList = $this->dao->select('*')->from(TABLE_XS_RECORD)
             ->where('1')
             ->beginIF($carID != '0')->andWhere('carID')->eq($carID)->fi()
             ->beginIF($status != 'all')->andWhere('status')->eq($status)->fi()
             ->beginIF($driverID != '0')->andWhere('driverID')->eq($driverID)->fi()
             ->beginIF($customerID != '0' && $this->app->user->admin == 'no')->andWhere('customerID')->eq($customerID)->fi()
             ->beginIF(!empty($beginDate))->andWhere('beginDate')->gt($beginDate)->fi()
-            ->beginIF(!empty($finishDate))->andWhere('finishDate')->lt($finishDate)->fi()
             ->orderBy($orderBy)
             ->page($pageID)
             ->fetchAll();
+
+        if(!empty($beginDate))
+        {
+            $beginDateRecordList = array();
+            foreach($recordList as $record) 
+            {
+                if(date('Y-m-d', strtotime($record->beginDate)) == $beginDate) $beginDateRecordList[] = $record;
+            }
+            return $beginDateRecordList;
+        }
+        else
+        {
+            return $recordList;
+        }
     }
 
     public function getRecordsByType($type = 'number')
@@ -38,7 +51,8 @@ class recordModel extends model
             ->autoCheck()
             ->batchCheck($this->config->record->require->create, 'notempty')
             ->exec();
-        return !dao::isError();
+
+        return $record;
     }
 
     public function update($recordID)
