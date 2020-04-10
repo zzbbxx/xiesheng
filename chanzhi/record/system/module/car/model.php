@@ -5,6 +5,11 @@ class carModel extends model
     {
         return $this->dao->select('*')->from(TABLE_XS_CAR)->where('id')->eq($carID)->fetch();
     }
+    
+    public function getCarByPlate($plate)
+    {
+        return $this->dao->select('*')->from(TABLE_XS_CAR)->where('plate')->eq($plate)->fetch();
+    }
 
     public function getCars($orderBy = 'id_desc', $pageID = '0')
     {
@@ -48,5 +53,17 @@ class carModel extends model
             ->where('id')->eq($carID)
             ->batchCheck($this->config->car->require->edit, 'notempty')
             ->exec();
+    }
+
+    /*  
+     *  Check disable expiry date.
+     *
+     * */
+    public function checkDisabledCars()
+    {   
+        return $this->dao->select('plate,expiryDate')->from(TABLE_XS_CAR)
+            ->where('expiryDate')->lt(date("Y-m-d",strtotime("+20 day")))
+            ->orderBy('expiryDate_asc')
+            ->fetchAll();
     }
 }
