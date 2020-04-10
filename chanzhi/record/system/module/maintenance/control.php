@@ -11,8 +11,8 @@ class maintenance extends control
         $this->view->orderBy = $orderBy;
 
         $this->view->admin        = $this->app->user->admin;
-        $this->view->carList    = $this->loadModel('car')->getCarsByType('plate');;
-        $this->view->driverList = $this->loadModel('driver')->getDriversByType('name');
+        $this->view->carList      = $this->loadModel('car')->getCarNumbers();
+        $this->view->drivers      = $this->loadModel('driver')->getDriversByType('name');
         $this->view->maintenances = $this->maintenance->getViolations($orderBy, $pageID);
         $this->display();
     }
@@ -29,7 +29,7 @@ class maintenance extends control
 
         $this->view->title = $this->lang->maintenance->create;
 
-        $this->view->carList    = $this->loadModel('car')->getCarsByType('plate');;
+        $this->view->carList      = $this->loadModel('car')->getCarNumbers();
         $this->view->driverList = $this->loadModel('driver')->getDriversByType('name');
         $this->display();
     }
@@ -53,7 +53,7 @@ class maintenance extends control
         $this->view->title = $this->lang->maintenance->edit;
 
         $this->view->maintenance  = $this->maintenance->getViolationByID($maintenanceID);
-        $this->view->carList    = $this->loadModel('car')->getCarsByType('plate');;
+        $this->view->carList      = $this->loadModel('car')->getCarNumbers();
         $this->view->driverList = $this->loadModel('driver')->getDriversByType('name');
         $this->display();
     }

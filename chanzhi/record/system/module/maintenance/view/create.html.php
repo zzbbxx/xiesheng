@@ -10,7 +10,11 @@
       <table class='table table-form'>
         <tr>
           <th><?php echo $lang->maintenance->car;?></th>
-          <td><?php echo html::select("carID", $carList, '', "class='form-control'");?></td>
+          <td><?php echo html::select("carNumber", $carList, '', "class='form-control'");?></td>
+        </tr>
+        <tr>
+          <th><?php echo $lang->maintenance->type;?></th>
+          <td><?php echo html::select("type", $lang->maintenance->typeList, '', "class='form-control'");?></td>
         </tr>
         <tr>
           <th><?php echo $lang->maintenance->driver;?></th>
@@ -21,8 +25,16 @@
           <td><input type='number' id='money' name='money' value='' class='form-control'/></td>
         </tr>
         <tr>
-          <th><?php echo $lang->maintenance->address;?></th>
-          <td><?php echo html::input('address', '', "class='form-control'");?></td>
+          <th><?php echo $lang->maintenance->mileage;?></th>
+          <td><?php echo html::input('mileage', '', "class='form-control'");?></td>
+        </tr>
+        <tr>
+          <th><?php echo $lang->maintenance->nextMileage;?></th>
+          <td><?php echo html::input('nextMileage', '', "class='form-control'");?></td>
+        </tr>
+        <tr>
+          <th><?php echo $lang->maintenance->location;?></th>
+          <td><?php echo html::input('location', '', "class='form-control'");?></td>
         </tr>
         <tr>
           <th><?php echo $lang->maintenance->createdDate;?></th>

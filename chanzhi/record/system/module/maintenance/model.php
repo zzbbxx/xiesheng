@@ -6,9 +6,18 @@ class maintenanceModel extends model
         return $this->dao->select('*')->from(TABLE_XS_MAINTENANCE)->where('id')->eq($maintenanceID)->fetch();
     }
 
-    public function getViolations($orderBy = 'desc', $pageID = '')
+    public function getViolations($orderBy = 'id_desc', $pageID = '')
     {
         return $this->dao->select('*')->from(TABLE_XS_MAINTENANCE)->orderBy($orderBy)->page($pageID)->fetchAll();
+    }
+    
+    public function getGroupByDriverID($driverID = 0, $type = 'type', $orderBy = 'id_desc', $pageID = '')
+    {
+        return $this->dao->select('*')->from(TABLE_XS_MAINTENANCE)
+            ->beginIF($driverID != 'all')->where('driverID')->eq($driverID)->fi()
+            ->orderBy($orderBy)
+            ->page($pageID)
+            ->fetchGroup($type);
     }
 
     public function getViolationsByType($type = 'number')
