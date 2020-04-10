@@ -21,6 +21,11 @@ class carModel extends model
         return $this->dao->select('*')->from(TABLE_XS_CAR)->fetchPairs('id', $type);
     }
 
+    public function getCarNumbers()
+    {
+        return $this->dao->select('id, plate')->from(TABLE_XS_CAR)->fetchPairs('plate', 'plate');
+    }  
+
     public function create($orderBy, $pagerID)
     {
         $car = fixer::input('post')
