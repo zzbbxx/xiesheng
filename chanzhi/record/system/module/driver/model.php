@@ -6,7 +6,7 @@ class driverModel extends model
         return $this->dao->select('*')->from(TABLE_XS_DRIVER)->where('id')->eq($driverID)->fetch();
     }
 
-    public function getDrivers($orderBy = 'desc', $pageID = '')
+    public function getDrivers($orderBy = 'id_desc', $pageID = '')
     {
         return $this->dao->select('*')->from(TABLE_XS_DRIVER)->orderBy($orderBy)->page($pageID)->fetchAll();
     }
