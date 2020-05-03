@@ -6,10 +6,12 @@ if(!defined('TABLE_XS_CUSTOMER'))  define('TABLE_XS_CUSTOMER', '`xs_customer`');
 // upgrade v1.1
 if(!defined('TABLE_XS_VIOLATION'))   define('TABLE_XS_VIOLATION', '`xs_violation`');
 if(!defined('TABLE_XS_MAINTENANCE')) define('TABLE_XS_MAINTENANCE', '`xs_maintenance`');
+//upgrade v1.2
+if(!defined('TABLE_XS_INSURANCE')) define('TABLE_XS_INSURANCE', '`xs_insurance`');
 
 if(RUN_MODE != 'front')
 {
-    $config->menus->record = 'record,customer,car,driver,violation,maintenance';
+    $config->menus->record = 'record,customer,car,driver,violation,maintenance,insurance';
 
     foreach($config->menus as $group => $modules)
     {
@@ -37,6 +39,10 @@ $config->rights->member['maintenance']['edit']   = 'edit';
 $config->rights->member['maintenance']['view']   = 'view';
 $config->rights->member['maintenance']['create'] = 'create';
 $config->rights->member['maintenance']['browse'] = 'browse';
+
+$config->rights->member['insurance']['edit']   = 'edit';
+$config->rights->member['insurance']['create'] = 'create';
+$config->rights->member['insurance']['browse'] = 'browse';
 
 $config->rights->member['record']['edit']     = 'edit';
 $config->rights->member['record']['view']     = 'view';

@@ -13,6 +13,7 @@ $lang->car->menu->info        = '车辆信息|car|browse|';
 $lang->car->menu->violation   = '违章|violation|browse|';
 $lang->car->menu->review      = '待审车辆|car|review|';
 $lang->car->menu->maintenance = '保养维修|maintenance|browse|';
+$lang->car->menu->insurance   = '保险|insurance|browse|';
 $lang->car->menu->refuel      = '加油卡|car|refuel|';
 
 /* Menu of violation module. */
@@ -22,6 +23,7 @@ $lang->violation->menu->info        = '车辆信息|car|browse|';
 $lang->violation->menu->violation   = '违章|violation|browse|';
 $lang->violation->menu->review      = '待审车辆|car|review|';
 $lang->violation->menu->maintenance = '保养维修|maintenance|browse|';
+$lang->violation->menu->insurance   = '保险|insurance|browse|';
 $lang->violation->menu->refuel      = '加油卡|car|refuel|';
 
 /* Menu of maintenance module. */
@@ -31,4 +33,15 @@ $lang->maintenance->menu->info        = '车辆信息|car|browse|';
 $lang->maintenance->menu->violation   = '违章|violation|browse|';
 $lang->maintenance->menu->review      = '待审车辆|car|review|';
 $lang->maintenance->menu->maintenance = '保养维修|maintenance|browse|';
+$lang->maintenance->menu->insurance   = '保险|insurance|browse|';
 $lang->maintenance->menu->refuel      = '加油卡|car|refuel|';
+
+/* Menu of insurance module. */
+if(!isset($lang->insurance)) $lang->insurance = new stdclass();
+$lang->insurance->menu = new stdclass();
+$lang->insurance->menu->info        = '车辆信息|car|browse|';
+$lang->insurance->menu->violation   = '违章|violation|browse|';
+$lang->insurance->menu->review      = '待审车辆|car|review|';
+$lang->insurance->menu->maintenance = '保养维修|maintenance|browse|';
+$lang->insurance->menu->insurance   = '保险|insurance|browse|';
+$lang->insurance->menu->refuel      = '加油卡|car|refuel|';

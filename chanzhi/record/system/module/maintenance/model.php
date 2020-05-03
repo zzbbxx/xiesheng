@@ -32,10 +32,27 @@ class maintenanceModel extends model
             ->add('addedBy', $this->app->user->account)
             ->get();
 
-        $this->dao->insert(TABLE_XS_MAINTENANCE)->data($maintenance)
-            ->autoCheck()
-            ->batchCheck($this->config->maintenance->require->create, 'notempty')
-            ->exec();
+        $oldMaintenanceID = '';
+        // 
+        if($maintenance->type == 'maintain')
+        {
+            $oldMaintenanceID = $this->dao->select('id')->from(TABLE_XS_MAINTENANCE)
+                ->where('type')->eq('maintain')
+                ->andWhere('carNumber')->eq($maintenance->carNumber)
+                ->fetch('id');
+        }
+
+        if(empty($oldMaintenanceID))
+        {
+            $this->dao->insert(TABLE_XS_MAINTENANCE)->data($maintenance)
+                ->autoCheck()
+                ->batchCheck($this->config->maintenance->require->create, 'notempty')
+                ->exec();
+        }
+        else
+        {
+            $this->update($oldMaintenanceID);
+        }
     }
 
     public function delete($maintenanceID, $null = null)

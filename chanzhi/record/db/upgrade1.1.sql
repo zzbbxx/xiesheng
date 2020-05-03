@@ -16,7 +16,7 @@ CREATE TABLE `xs_violation` (
 DROP TABLE IF EXISTS `xs_maintenance`;
 CREATE TABLE `xs_maintenance` (
     `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-    `carID` mediumint(8) unsigned NOT NULL default '0',
+    `carNumber` char(12) NOT NULL default '',
     `driverID` mediumint(8) unsigned NOT NULL default '0',
     `type` char(30) NOT NULL,
     `mileage` mediumint(8) unsigned NOT NULL default '0',
